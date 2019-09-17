@@ -14,6 +14,15 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'mqtt'
+
+gem 'react_on_rails'
+
+# # Sidekiq:
+# gem 'sidekiq'
+# gem 'sidekiq-failures'
+# # dependency for sidekiq:`
+# gem 'sinatra', ">=2.0.0.beta2", require: false
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -27,3 +36,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+gem 'mini_racer', platforms: :ruby
