@@ -2,24 +2,26 @@
 // rfc
 
 import React, { useState, useEffect} from 'react'
+import consumer from '../channels/consumer'
 
 export default function PokemonList({ pokemon }) {
   const [test, setTest] = useState([]);
 
   useEffect(() => {
-    //subsctibe to cable here liki ths ex:
-    // App.chatroom = App.cable.subscriptions.create({
-    //   channel: "ChatroomChannel",
-    //   id: this.state.chatroomId
-    //   },
-    //   {
-    //     received: function(data) {
-    //       this.updateMessages(JSON.parse(data.message))
-    //     }.bind(this)
-    //   });
 
-    //https://reactjs.org/docs/hooks-intro.html
-    //https://github.com/learnetto/reactchat/blob/master/client/app/bundles/Chatroom/components/Chatroom.jsx
+
+    consumer.subscriptions.create({channel: 'PokemonChannel' },{
+      received(data) { // 2 days to find out its received , not recieved
+        console.log('rcv:')
+        console.log(data.message);
+        setTest(test => [...test, data.message]);
+      },
+      connected(data) {
+        console.log(data);
+        console.log('clable vconected')
+      }
+  
+    });
     //return () => { // unsubscribe here}
   },[]);
 

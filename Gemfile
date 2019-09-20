@@ -16,7 +16,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'mqtt'
 
-gem 'react_on_rails'
+# gem 'react_on_rails'
 
 # # Sidekiq:
 # gem 'sidekiq'

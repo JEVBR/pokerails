@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
+
   root to: 'pages#home'
 
   #API
@@ -9,9 +9,4 @@ Rails.application.routes.draw do
     end
   end
 
-#   # Sidekiq Web UI
-#   require "sidekiq/web"
-# # only for admins:  authenticate :user, lambda { |u| u.admin } do
-#     mount Sidekiq::Web => '/sidekiq'
-#   #end
 end
