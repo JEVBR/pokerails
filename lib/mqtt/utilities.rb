@@ -37,7 +37,7 @@ def with_client_connection
     retry
   rescue => ex
     puts "unexpected error in client connection block: #{ ex.message }"
-    puts ex.backtrace[0..16]
+    puts ex
   end
 end
 

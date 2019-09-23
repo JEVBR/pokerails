@@ -17,11 +17,13 @@ function App() {
     axios.get(currentPageUrl,{
       cancelToken: new axios.CancelToken(c => cancel = c)
     }).then(res => {
-    console.log(res)
+    //console.log(res)
     setLoading(false)
     //setNextPageUrl(res.data.next)
     //setPrevPageUrl(res.data.previous)
     setPokemon(res.data.map(p => p.name))
+    console.log(pokemon)
+        //setPokemon(res.data.map(p => {name => p.name, uni => 'blaat'}))
     })
     return () => cancel()
   }, [currentPageUrl])
