@@ -10,6 +10,8 @@ export default function PokemonList({ pokemon }) {
   useEffect(() => {
     var subscription = consumer.subscriptions.create({channel: 'PokemonChannel' },{
       received(data) { 
+        console.log('efffff')
+        console.log(data.message)
         setPokeList(pokeList => [...pokeList, data.message]);
       },
     });
@@ -26,8 +28,8 @@ console.log(pokemon)
 
   return (
     <div>
-      {pokeList.map( p => (
-          <div key={p.uni}>{p.name}</div>
+      {pokeList.map( p => ( 
+          <div key={p.uni}>{p}</div>
         ))} 
     </div>
   )

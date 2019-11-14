@@ -3,7 +3,9 @@ require_relative './utilities'
 puts 'heeeere'
 
 topics = [
-  "blaat" ]
+  "blaat",
+  "jevbr",
+  "jevbrc"]
 
 
   topics.each do |topic|
