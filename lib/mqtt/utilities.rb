@@ -20,7 +20,8 @@ def get_client_connection
   # end
 
   # puts "CONNECT TO #{ uri.gsub(/:[^@]+@/, ':xxxxxxxxxx@') }"
-  MQTT::Client.connect('broker.mqttdashboard.com', 1883)
+  # MQTT::Client.connect('broker.mqttdashboard.com', 1883)
+  MQTT::Client.connect('test.mosquitto.org', 1883)
   # MQTT::Client.connect(uri, PORT, { ack_timeout: 10, client_id: "io-mqtt-" + SecureRandom.hex(4) }.merge(options))
 end
 
